@@ -36,7 +36,7 @@ public class NeaHunger
     {
         // Register the commonSetup method for mod loading
         modEventBus.addListener(this::commonSetup);
-
+        NeaHungerGameRules.register(modEventBus);
 
         ATTRIBUTES.register(modEventBus);
 
@@ -54,7 +54,6 @@ public class NeaHunger
     {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
-
 
     }
 

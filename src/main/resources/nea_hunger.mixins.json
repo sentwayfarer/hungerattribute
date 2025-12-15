@@ -5,11 +5,11 @@
   "mixins": [
     "FoodDataMixin",
     "LivingEntityMixin",
+    "MinecraftServerMixin",
     "PlayerMixin"
   ],
   "client": [
-    "GuiMixin",
-    "LocalPlayerMixin"
+    "GuiMixin"
   ],
   "injectors": {
     "defaultRequire": 1
