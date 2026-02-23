@@ -1,11 +1,9 @@
 {
   "required": true,
-  "package": "net.lawliet.nea_hunger.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "package": "com.flarelabsmc.hungerattribute.mixin",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "FoodDataMixin",
-    "LivingEntityMixin",
-    "MinecraftServerMixin",
     "PlayerMixin"
   ],
   "client": [
@@ -13,5 +11,8 @@
   ],
   "injectors": {
     "defaultRequire": 1
+  },
+  "mixinextras": {
+    "minVersion": "0.5.3"
   }
 }
