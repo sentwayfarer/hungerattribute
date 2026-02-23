@@ -7,7 +7,7 @@
     "PlayerMixin"
   ],
   "client": [
-    "GuiMixin"
+    "ForgeGuiMixin"
   ],
   "injectors": {
     "defaultRequire": 1
