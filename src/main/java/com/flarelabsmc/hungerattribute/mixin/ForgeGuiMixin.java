@@ -33,15 +33,21 @@ public abstract class ForgeGuiMixin {
 
     @Inject(
             method = "renderFood",
-            at = @At(
-                    value = "FIELD",
-                    target = "Lnet/minecraftforge/client/gui/overlay/ForgeGui;rightHeight:I",
-                    ordinal = 0
-            )
+            at = @At("HEAD")
     )
-    private void adjustRightHeight(int width, int height, GuiGraphics guiGraphics, CallbackInfo ci) {
+    private void adjust(int width, int height, GuiGraphics guiGraphics, CallbackInfo ci) {
         if (hungeratt$totalFoodRows > 1) {
-            rightHeight += (hungeratt$totalFoodRows - 1) / 10;
+            rightHeight += (hungeratt$totalFoodRows - 1) * 10;
+        }
+    }
+
+    @Inject(
+            method = "renderFood",
+            at = @At("RETURN")
+    )
+    private void resetHeight(int width, int height, GuiGraphics guiGraphics, CallbackInfo ci) {
+        if (hungeratt$totalFoodRows > 1) {
+            rightHeight -= (hungeratt$totalFoodRows - 1) * 10;
         }
     }
 
@@ -71,7 +77,9 @@ public abstract class ForgeGuiMixin {
             index = 2
     )
     private int modifyFoodY(int y, @Local(ordinal = 5) int i) {
+        if (hungeratt$totalFoodRows <= 1) return y;
         int row = i / 10;
-        return y - (row * 10);
+        int rowFromBottom = Math.max(0, hungeratt$totalFoodRows - 1 - row);
+        return y + rowFromBottom * 10;
     }
 }
