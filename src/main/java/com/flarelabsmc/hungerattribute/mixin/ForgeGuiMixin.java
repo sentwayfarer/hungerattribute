@@ -49,6 +49,9 @@ public abstract class ForgeGuiMixin {
         if (hungeratt$totalFoodRows > 1) {
             rightHeight -= (hungeratt$totalFoodRows - 1) * 10;
         }
+        if (rightHeight % 10 != 0) {
+            rightHeight += 10 - (rightHeight % 10);
+        }
     }
 
     @ModifyArg(
