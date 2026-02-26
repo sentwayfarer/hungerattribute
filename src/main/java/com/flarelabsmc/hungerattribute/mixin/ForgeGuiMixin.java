@@ -49,7 +49,8 @@ public abstract class ForgeGuiMixin {
             method = "renderFood",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V"
+                    target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V",
+                    remap = true
             ),
             index = 1
     )
@@ -64,7 +65,8 @@ public abstract class ForgeGuiMixin {
             method = "renderFood",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V"
+                    target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V",
+                    remap = true
             ),
             index = 2
     )

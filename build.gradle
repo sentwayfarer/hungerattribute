@@ -18,7 +18,7 @@ repositories {
 }
 
 base {
-    archivesName = mod_id
+    archivesName = "iron_gut"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
